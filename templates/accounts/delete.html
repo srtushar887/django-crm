@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+{% block content %}
+   <p>are you sure to delete to data {{ item }}</p>
+    <form action="{% url 'deleteOrder' item.id %}" method="post">
+    {% csrf_token %}
+    <a href="{% url 'home' %}">cancel</a>
+    <input type="submit" name="cofirm">
+    </form>
+{% endblock %}
